@@ -29,7 +29,7 @@ mapping = {
     26: 'Sou9',
     27: 'Ton',
     28: 'Nan',
-    29: 'Sha',
+    29: 'Shaa',
     30: 'Pei',
     31: 'Haku',
     32: 'Hatsu',
