@@ -1,0 +1,3 @@
+#need to add all the different required python libraries
+#add a link to database 
+
