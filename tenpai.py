@@ -36,12 +36,16 @@ def is_four_trips(hand):
     return False
 
 
-def is_tenpai(hand):
-    hand = sorted(hand)
+def is_tenpai(hand, melds):
     norm_hand = [tile // 4 for tile in hand]
+    norm_hand = sorted(norm_hand)
+    norm_melds = [tile // 4 for tile in melds]
+    full_hand = sorted(norm_hand + norm_melds)
     tenpai = False
     waits = []
     for tile in range(34):
+        if full_hand.count(tile) == 4: 
+            continue
         test_hand = norm_hand + [tile]
         if is_thirteen_orphans(test_hand):
             waits.append(tile)
