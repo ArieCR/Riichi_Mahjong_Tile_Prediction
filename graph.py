@@ -42,12 +42,12 @@ def load_tile1(tile, border_color='white'):
     target_size = (60 * 2, 80 * 2)
     img = img.resize(target_size)
     border_width = 2
-    background = Image.new('RGBA', (target_size[0] + 2 * border_width, target_size[1] + 2 * border_width),
-                           color=border_color)
-    if img.mode == 'RGBA':
+    background = Image.new('RGB', (target_size[0] + 2 * border_width, target_size[1] + 2 * border_width),
+                           color='yellow')
+    if img.mode == 'RGB':
         background.paste(img, (border_width, border_width), img)
     else:
-        img = img.convert('RGBA')
+        img = img.convert('RGB')
         background.paste(img, (border_width, border_width))
     final_img = background.convert('RGB')
     return final_img
