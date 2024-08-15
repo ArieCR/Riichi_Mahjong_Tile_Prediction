@@ -89,7 +89,7 @@ class MahjongData():
                 tile_array = list(map(lambda x: TILE_CLASS_DICT[x], filter(lambda x: x != -1, tiles)))
                 melds_tiles[wind, i, :len(tile_array)] = tile_array
 
-            _is_tenpai[wind], wait = is_tenpai(board_states[str(wind)]["hand_tiles"], board_states[str(wind)]["melds"])
+            _is_tenpai[wind], wait = is_tenpai(board_states[str(wind)]["hand_tiles"], board_states[str(wind)]["melds"][0]['tiles'])
             for tile in wait:
                 waits[wind][tile] = 1
             
